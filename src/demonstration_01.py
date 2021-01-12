@@ -14,7 +14,20 @@ Notes:
 - Return an empty list if n == 0.
 """
 
-
 def last(a, n):
-    # Your code here
+    try:
+        n = int(n)
+    except ValueError as e:
+        print(e)
+        return 'invalid number'
+    if n <= 0:
+        return []
+    elif len(a) < n:
+        return 'invalid'
+    return a[-n:]
 
+print(last([1, 2, 3, 4, 5], 1)) # ➞ [5]
+print(last([4, 3, 9, 9, 7, 6], 3)) # ➞ [9, 7, 6]
+print(last([1, 2, 3, 4, 5], 7)) # ➞ "invalid"
+print(last([1, 2, 3, 4, 5], 0)) # ➞ []
+print(last([1, 2, 3, 4, 5], 'jlj')) # ➞ "invalid number"
