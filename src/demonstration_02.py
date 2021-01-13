@@ -13,8 +13,13 @@ Examples:
 Notes:
 - The input list will only contain integers.
 """
-
-
 def add_indexes(numbers):
-    # Your code here
+    copy = []
+    for index, each in enumerate(numbers):
+        testing = index + each
+        copy.append(index + each)
+    return copy
 
+print(add_indexes([0, 0, 0, 0, 0])) # ➞ [0, 1, 2, 3, 4]
+print(add_indexes([1, 2, 3, 4, 5])) # ➞ [1, 3, 5, 7, 9]
+print(add_indexes([5, 4, 3, 2, 1])) # ➞ [5, 5, 5, 5, 5]
