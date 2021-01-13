@@ -13,7 +13,17 @@ Examples:
 - get_middle("middle") -> "dd"
 - get_middle("A") -> "A"
 """
+import math
 def get_middle(input_str):
-    # Your code here
+    each = list(input_str)
+    input_len = len(each)
+    mid = round(input_len / 2)
+    if input_len % 2 == 0:
+        return each[mid - 1] + each[mid]
+    elif input_len % 2 != 0:
+        return each[mid - 1]
 
-
+print(get_middle("test")) # -> "es"
+print(get_middle("testing")) # -> "t"
+print(get_middle("middle")) # -> "dd"
+print(get_middle("A")) # -> "A"
